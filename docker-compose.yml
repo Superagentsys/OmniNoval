@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./.env:/app/.env
+      - ./conf.yaml:/app/conf.yaml
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    
+  # 可选的开发环境配置
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+      - ./.env:/app/.env
+      - ./conf.yaml:/app/conf.yaml
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: python server.py --host 0.0.0.0 --reload
+    restart: unless-stopped

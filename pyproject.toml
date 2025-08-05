@@ -1,0 +1,46 @@
+[project]
+name = "omninova"
+version = "0.1.0"
+description = "An advanced multi-agent automation framework"
+authors = [
+    {name = "OmniNova Team"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+license = {text = "MIT"}
+dependencies = [
+    "litellm>=1.17.0",
+    "langgraph>=0.0.17",
+    "langchain>=0.1.0",
+    "langchain-core>=0.1.15",
+    "langchain-community>=0.0.16",
+    "tavily-python>=0.2.8",
+    "jina>=3.15.1",
+    "json-repair>=0.4.0",
+    "pydantic>=2.0.0",
+    "python-dotenv>=1.0.0",
+    "fastapi>=0.110.0",
+    "uvicorn>=0.28.0",
+    "browser-use>=0.1.4",
+    "playwright>=1.41.0",
+    "pyyaml>=6.0.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "black>=23.7.0",
+    "ruff>=0.0.286",
+]
+
+[tool.black]
+line-length = 88
+target-version = ["py312"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+select = ["E", "F", "I"]
+
+[tool.pytest]
+testpaths = ["tests"]
