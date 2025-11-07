@@ -1,157 +1,157 @@
 # OmniNoval
 
-OmniNoval 是一个先进的多模态多智能体自动化框架，基于 LangGraph 构建，支持复杂的智能体协作工作流。
+OmniNoval is an advanced multimodal multi-agent automation framework, built on LangGraph, supporting complex agent collaboration workflows.
 
-## 🌟 特性
+## 🌟 Features
 
-- **多智能体协作**: 支持多个专业智能体协同工作，每个智能体都有特定的角色和专长
-- **多模态支持**: 集成视觉模型，支持图像理解和处理
-- **灵活的工作流引擎**: 基于 LangGraph 构建的可扩展工作流系统
-- **Web 自动化**: 集成 Playwright，支持网页浏览和自动化操作
-- **RESTful API**: 提供完整的 API 接口，支持集成到现有系统
-- **Docker 支持**: 提供完整的容器化部署方案
-- **配置灵活**: 支持多种 LLM 提供商和配置选项
+- **Multi-agent Collaboration**: Supports multiple specialized agents working together, each with specific roles and expertise
+- **Multimodal Support**: Integrated vision models, supporting image understanding and processing
+- **Flexible Workflow Engine**: Extensible workflow system based on LangGraph
+- **Web Automation**: Integrated Playwright, supporting web browsing and automation operations
+- **RESTful API**: Provides complete API interfaces, supporting integration into existing systems
+- **Docker Support**: Provides complete containerized deployment solutions
+- **Flexible Configuration**: Supports multiple LLM providers and configuration options
 
-## 📋 目录结构
+## 📋 Directory Structure
 
 ```
 OmniNoval/
-├── assets/                 # 静态资源文件
-├── src/                    # 源代码目录
-│   ├── agents/            # 智能体定义
-│   ├── api/               # API 接口
-│   ├── config/            # 配置管理
-│   ├── engine/            # 工作流引擎
-│   ├── llms/              # LLM 抽象层
-│   ├── prompts/           # 提示词模板
-│   ├── service/           # 服务层
-│   ├── tools/             # 工具集
-│   ├── utils/             # 工具函数
-│   └── workflow.py        # 工作流入口
-├── conf.yaml.example      # 配置文件示例
-├── docker-compose.yml     # Docker Compose 配置
-├── Dockerfile            # Docker 镜像配置
-├── main.py               # CLI 入口
-├── server.py             # API 服务器入口
-├── pyproject.toml        # 项目配置
-└── README.md             # 项目文档
+├── assets/                 # Static resource files
+├── src/                    # Source code directory
+│   ├── agents/            # Agent definitions
+│   ├── api/               # API interfaces
+│   ├── config/            # Configuration management
+│   ├── engine/            # Workflow engine
+│   ├── llms/              # LLM abstraction layer
+│   ├── prompts/           # Prompt templates
+│   ├── service/           # Service layer
+│   ├── tools/             # Toolset
+│   ├── utils/             # Utility functions
+│   └── workflow.py        # Workflow entry
+├── conf.yaml.example      # Configuration file example
+├── docker-compose.yml     # Docker Compose configuration
+├── Dockerfile            # Docker image configuration
+├── main.py               # CLI entry
+├── server.py             # API server entry
+├── pyproject.toml        # Project configuration
+└── README.md             # Project documentation
 ```
 
-## 🚀 快速开始
+## 🚀 Quick Start
 
-### 环境要求
+### Environment Requirements
 
 - Python 3.12+
-- uv 包管理器（推荐）
+- uv package manager (recommended)
 
-### 本地安装
+### Local Installation
 
-1. **克隆项目**
+1. **Clone the Project**
    ```bash
    git clone <repository-url>
    cd OmniNoval
    ```
 
-2. **安装依赖**
+2. **Install Dependencies**
    ```bash
-   # 使用 uv 安装依赖
+   # Install dependencies using uv
    uv sync
    
-   # 安装 Playwright 浏览器
+   # Install Playwright browser
    uv run playwright install chromium --with-deps
    ```
 
-3. **配置环境**
+3. **Configure Environment**
    ```bash
-   # 复制配置文件
+   # Copy configuration file
    cp conf.yaml.example conf.yaml
    
-   # 编辑配置文件，设置你的 API 密钥
+   # Edit configuration file, set your API keys
    vim conf.yaml
    ```
 
-4. **运行项目**
+4. **Run the Project**
    ```bash
-   # CLI 模式
-   uv run main.py "你的查询"
+   # CLI mode
+   uv run main.py "Your query"
    
-   # API 服务器模式
+   # API server mode
    uv run server.py --reload
    ```
 
-### 使用 Makefile
+### Using Makefile
 
-项目提供了便捷的 Makefile 命令：
+The project provides convenient Makefile commands:
 
 ```bash
-# 初始设置
+# Initial setup
 make setup
 
-# 运行 CLI
+# Run CLI
 make run
 
-# 启动开发服务器
+# Start development server
 make dev
 
-# 启动生产服务器
+# Start production server
 make api
 
-# 运行测试
+# Run tests
 make test
 
-# 清理环境
+# Clean environment
 make clean
 ```
 
-## 🐳 Docker 部署
+## 🐳 Docker Deployment
 
-### 使用 Docker Compose（推荐）
+### Using Docker Compose (Recommended)
 
 ```bash
-# 启动生产环境
+# Start production environment
 docker-compose up api
 
-# 启动开发环境（支持热重载）
+# Start development environment (supports hot reload)
 docker-compose up dev
 ```
 
-### 手动构建 Docker 镜像
+### Manual Docker Image Build
 
 ```bash
-# 构建镜像
+# Build image
 docker build -t omninova .
 
-# 运行容器
+# Run container
 docker run -p 8000:8000 -v $(pwd)/.env:/app/.env -v $(pwd)/conf.yaml:/app/conf.yaml omninova
 ```
 
-## ⚙️ 配置说明
+## ⚙️ Configuration Instructions
 
-### 配置文件结构
+### Configuration File Structure
 
-项目支持两种配置方式：
-- `conf.yaml` 配置文件（推荐）
-- `.env` 环境变量文件（兼容模式）
+The project supports two configuration methods:
+- `conf.yaml` configuration file (recommended)
+- `.env` environment variable file (compatibility mode)
 
-### LLM 配置
+### LLM Configuration
 
-在 `conf.yaml` 中配置不同的 LLM 模型：
+Configure different LLM models in `conf.yaml`:
 
 ```yaml
-# 推理模型
+# Reasoning Model
 REASONING_MODEL:
   model: "volcengine/ep-xxxx"
   api_key: $REASONING_API_KEY
   api_base: $REASONING_BASE_URL
 
-# 基础模型
+# Basic Model
 BASIC_MODEL:
   model: "azure/gpt-4o-2024-08-06"
   api_base: $AZURE_API_BASE
   api_version: $AZURE_API_VERSION
   api_key: $AZURE_API_KEY
 
-# 视觉模型
+# Vision Model
 VISION_MODEL:
   model: "azure/gpt-4o-2024-08-06"
   api_base: $AZURE_API_BASE
@@ -159,132 +159,132 @@ VISION_MODEL:
   api_key: $AZURE_API_KEY
 ```
 
-### 环境变量
+### Environment Variables
 
-创建 `.env` 文件设置敏感信息：
+Create `.env` file to set sensitive information:
 
 ```bash
-# API 密钥
+# API Keys
 REASONING_API_KEY=your_reasoning_api_key
 AZURE_API_KEY=your_azure_api_key
 
-# API 端点
+# API Endpoints
 REASONING_BASE_URL=https://api.example.com
 AZURE_API_BASE=https://your-resource.openai.azure.com
 AZURE_API_VERSION=2024-02-15-preview
 ```
 
-## 📖 使用方法
+## 📖 Usage
 
-### CLI 模式
+### CLI Mode
 
 ```bash
-# 直接运行
-python main.py "帮我分析这个网页的内容"
+# Direct run
+python main.py "Help me analyze the content of this webpage"
 
-# 交互模式
+# Interactive mode
 python main.py
-# 然后输入你的查询
+# Then input your query
 ```
 
-### API 模式
+### API Mode
 
-启动 API 服务器：
+Start API server:
 
 ```bash
 python server.py --host 0.0.0.0 --port 8000 --reload
 ```
 
-API 端点：
-- `GET /health` - 健康检查
-- `POST /workflow` - 执行工作流
-- `GET /docs` - API 文档（Swagger UI）
+API Endpoints:
+- `GET /health` - Health check
+- `POST /workflow` - Execute workflow
+- `GET /docs` - API documentation (Swagger UI)
 
-### 工作流示例
+### Workflow Example
 
 ```python
 from src.workflow import run_agent_workflow
 
-# 执行工作流
+# Execute workflow
 result = run_agent_workflow(
-    user_input="帮我分析这个网页的内容",
+    user_input="Help me analyze the content of this webpage",
     debug=True
 )
 
-# 查看结果
+# View result
 print(result["messages"])
 ```
 
-## 🔧 开发指南
+## 🔧 Development Guide
 
-### 项目结构说明
+### Project Structure Explanation
 
-- **agents/**: 定义各种智能体角色和行为
-- **engine/**: 工作流引擎，基于 LangGraph 构建
-- **llms/**: LLM 抽象层，支持多种模型提供商
-- **tools/**: 工具集，包括网页浏览、搜索等
-- **api/**: RESTful API 接口
+- **agents/**: Defines various agent roles and behaviors
+- **engine/**: Workflow engine, built on LangGraph
+- **llms/**: LLM abstraction layer, supports multiple model providers
+- **tools/**: Toolset, including web browsing, search, etc.
+- **api/**: RESTful API interfaces
 
-### 添加新的智能体
+### Adding New Agents
 
-1. 在 `src/agents/` 目录下创建新的智能体文件
-2. 在 `src/config/` 中注册智能体配置
-3. 在工作流中集成新的智能体
+1. Create new agent file in `src/agents/`
+2. Register agent configuration in `src/config/`
+3. Integrate new agent in workflow
 
-### 添加新的工具
+### Adding New Tools
 
-1. 在 `src/tools/` 目录下创建工具文件
-2. 实现工具接口
-3. 在智能体中注册和使用工具
+1. Create tool file in `src/tools/`
+2. Implement tool interface
+3. Register and use tool in agents
 
-### 代码规范
+### Code Standards
 
-项目使用以下工具进行代码质量控制：
+The project uses the following tools for code quality control:
 
 ```bash
-# 代码格式化
+# Code formatting
 uv run black .
 
-# 代码检查
+# Code checking
 uv run ruff check .
 
-# 运行测试
+# Run tests
 uv run pytest
 ```
 
-## 🤝 贡献指南
+## 🤝 Contribution Guide
 
-1. Fork 项目
-2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 打开 Pull Request
+1. Fork the project
+2. Create feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to branch (`git push origin feature/AmazingFeature`)
+5. Open Pull Request
 
-## 📝 许可证
+## 📝 License
 
-本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🆘 常见问题
+## 🆘 FAQ
 
-### Q: 如何切换不同的 LLM 提供商？
-A: 在 `conf.yaml` 中修改模型配置，支持所有 LiteLLM 兼容的提供商。
+### Q: How to switch different LLM providers?
+A: Modify model configuration in `conf.yaml`, supports all LiteLLM compatible providers.
 
-### Q: 如何添加自定义工具？
-A: 在 `src/tools/` 目录下创建新的工具类，并在智能体中注册使用。
+### Q: How to add custom tools?
+A: Create new tool class in `src/tools/` directory, and register use in agents.
 
-### Q: 如何调试工作流？
-A: 设置 `debug=True` 参数，或查看日志输出。
+### Q: How to debug workflow?
+A: Set `debug=True` parameter, or check log output.
 
-### Q: 支持哪些浏览器自动化功能？
-A: 基于 Playwright，支持 Chromium 浏览器的所有功能。
+### Q: What browser automation features are supported?
+A: Based on Playwright, supports all features of Chromium browser.
 
-## 📞 支持
+## 📞 Support
 
-如果你遇到问题或有建议，请：
-1. 查看 [Issues](../../issues) 页面
-2. 创建新的 Issue
-3. 联系开发团队
+If you encounter problems or have suggestions, please:
+1. Check [Issues](../../issues) page
+2. Create new Issue
+3. Contact development team
 
 ---
 
-**OmniNoval** - 让多智能体协作变得简单高效 🚀
+**OmniNoval** - Making multi-agent collaboration simple and efficient 🚀

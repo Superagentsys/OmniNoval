@@ -1,0 +1,21 @@
+# 设置为true会读取conf.yaml配置，设置为false会使用原来的.env配置，默认为false（兼容存量配置）
+USE_CONF: true
+
+# LLM Config
+## 遵循litellm配置参数: https://docs.litellm.ai/docs/providers, 可以点击具体provider文档，参看completion参数示例
+REASONING_MODEL:
+  model: "volcengine/ep-xxxx"
+  api_key: $REASONING_API_KEY # 支持通过$ENV_KEY引用.env文件中的环境变量ENV_KEY
+  api_base: $REASONING_BASE_URL
+
+BASIC_MODEL:
+  model: "azure/gpt-4o-2024-08-06"
+  api_base: $AZURE_API_BASE
+  api_version: $AZURE_API_VERSION
+  api_key: $AZURE_API_KEY
+
+VISION_MODEL:
+  model: "azure/gpt-4o-2024-08-06"
+  api_base: $AZURE_API_BASE
+  api_version: $AZURE_API_VERSION
+  api_key: $AZURE_API_KEY
