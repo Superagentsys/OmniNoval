@@ -9,17 +9,63 @@ logger = logging.getLogger(__name__)
 
 def load_template(template_name: str) -> str:
     """Load a prompt template from the templates directory."""
+    # 首先尝试加载 .txt 文件
     template_path = Path(__file__).parent / f"{template_name}.txt"
-    if not template_path.exists():
-        logger.warning(f"Template {template_name} not found at {template_path}")
+    if template_path.exists():
+        with open(template_path, "r", encoding="utf-8") as f:
+            return f.read()
+    
+    # 如果没有 .txt 文件，尝试从 Python 模块加载
+    try:
+        if template_name == "vulun_agent":
+            from .vulun_agent import get_vulun_agent_prompt
+            return get_vulun_agent_prompt({})
+        elif template_name == "bug_bounty_agent":
+            from .bug_bounty_agent import get_bug_bounty_agent_prompt
+            return get_bug_bounty_agent_prompt({})
+        elif template_name == "ctf_agent":
+            from .ctf_agent import get_ctf_agent_prompt
+            return get_ctf_agent_prompt({})
+        elif template_name == "cve_intel_agent":
+            from .cve_intel_agent import get_cve_intel_agent_prompt
+            return get_cve_intel_agent_prompt({})
+        else:
+            logger.warning(f"Template {template_name} not found at {template_path}")
+            return ""
+    except ImportError as e:
+        logger.warning(f"Failed to import template {template_name}: {e}")
         return ""
-        
-    with open(template_path, "r", encoding="utf-8") as f:
-        return f.read()
 
 def apply_prompt_template(template_name: str, state: Dict) -> List[BaseMessage]:
     """Apply a prompt template with the current state information."""
-    template = load_template(template_name)
+    # 特殊处理安全代理的提示词
+    if template_name == "vulun_agent":
+        try:
+            from .vulun_agent import get_vulun_agent_prompt
+            template = get_vulun_agent_prompt(state)
+        except ImportError:
+            template = load_template(template_name)
+    elif template_name == "bug_bounty_agent":
+        try:
+            from .bug_bounty_agent import get_bug_bounty_agent_prompt
+            template = get_bug_bounty_agent_prompt(state)
+        except ImportError:
+            template = load_template(template_name)
+    elif template_name == "ctf_agent":
+        try:
+            from .ctf_agent import get_ctf_agent_prompt
+            template = get_ctf_agent_prompt(state)
+        except ImportError:
+            template = load_template(template_name)
+    elif template_name == "cve_intel_agent":
+        try:
+            from .cve_intel_agent import get_cve_intel_agent_prompt
+            template = get_cve_intel_agent_prompt(state)
+        except ImportError:
+            template = load_template(template_name)
+    else:
+        template = load_template(template_name)
+    
     if not template:
         return [SystemMessage(content="Error: Template not found")]
         

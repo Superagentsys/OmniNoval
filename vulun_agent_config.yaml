@@ -1,0 +1,146 @@
+# VulunAgent 配置文件
+# 基于 OmniNoval AI 架构设计的安全工具配置
+
+# enable VulunAgent
+ENABLE_VULUN_AGENT: true
+
+# 安全工具配置
+SECURITY_TOOLS:
+  # 网络扫描工具
+  nmap:
+    enabled: true
+    path: "nmap"
+    default_args: ["-sS", "-O", "-sV", "--script=vuln"]
+    timeout: 300
+    
+  masscan:
+    enabled: true
+    path: "masscan"
+    default_args: ["--rate=1000"]
+    timeout: 180
+    
+  # 漏洞扫描工具
+  nuclei:
+    enabled: true
+    path: "nuclei"
+    templates_path: "/opt/nuclei-templates"
+    default_severity: ["high", "critical"]
+    timeout: 600
+    
+  # Web 应用扫描工具
+  gobuster:
+    enabled: true
+    path: "gobuster"
+    wordlists:
+      - "/usr/share/wordlists/dirb/common.txt"
+      - "/usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt"
+    default_extensions: ["php", "html", "js", "txt", "asp", "aspx"]
+    timeout: 300
+    
+  nikto:
+    enabled: true
+    path: "nikto"
+    timeout: 300
+    
+  dirb:
+    enabled: true
+    path: "dirb"
+    timeout: 300
+    
+  sqlmap:
+    enabled: true
+    path: "sqlmap"
+    timeout: 600
+    
+  # 信息收集工具
+  subfinder:
+    enabled: true
+    path: "subfinder"
+    timeout: 120
+    
+  amass:
+    enabled: true
+    path: "amass"
+    timeout: 300
+    
+  httpx:
+    enabled: true
+    path: "httpx"
+    timeout: 60
+
+# 扫描策略配置
+SCAN_STRATEGIES:
+  # 快速扫描
+  quick:
+    tools: ["nmap", "nuclei", "subfinder"]
+    port_range: "1-1000"
+    nuclei_severity: ["critical", "high"]
+    timeout: 300
+    
+  # 标准扫描
+  standard:
+    tools: ["nmap", "nuclei", "gobuster", "subfinder", "httpx"]
+    port_range: "1-65535"
+    nuclei_severity: ["medium", "high", "critical"]
+    timeout: 900
+    
+  # 深度扫描
+  comprehensive:
+    tools: ["nmap", "masscan", "nuclei", "gobuster", "nikto", "subfinder", "amass", "httpx"]
+    port_range: "1-65535"
+    nuclei_severity: ["low", "medium", "high", "critical"]
+    timeout: 1800
+
+# 报告配置
+REPORTING:
+  # 输出格式
+  formats: ["markdown", "json", "html"]
+  
+  # 包含的信息
+  include_raw_output: false
+  include_screenshots: true
+  include_remediation: true
+  
+  # 风险评级
+  risk_scoring:
+    critical: 50
+    high: 30
+    medium: 15
+    low: 5
+    info: 1
+
+# 安全配置
+SECURITY:
+  # 允许的目标类型
+  allowed_targets:
+    - "internal"  # 内网地址
+    - "authorized"  # 已授权的外网地址
+  
+  # 禁止的目标
+  blocked_targets:
+    - "127.0.0.1"
+    - "localhost"
+    - "*.gov"
+    - "*.mil"
+  
+  # 扫描限制
+  rate_limiting:
+    max_concurrent_scans: 3
+    delay_between_requests: 1  # 秒
+  
+  # 授权验证
+  require_authorization: true
+  authorization_file: "authorized_targets.txt"
+
+# 日志配置
+LOGGING:
+  level: "INFO"
+  file: "vulun_agent.log"
+  max_size: "100MB"
+  backup_count: 5
+  
+# 缓存配置
+CACHE:
+  enabled: true
+  ttl: 3600  # 1小时
+  max_size: 1000  # 最大缓存条目数

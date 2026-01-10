@@ -7,4 +7,8 @@ AGENT_LLM_MAP = {
     "coder": "basic",
     "browser": "basic",
     "reporter": "basic",
+    "vulun_agent": "reasoning",
+    "bug_bounty_agent": "reasoning",
+    "ctf_agent": "reasoning",
+    "cve_intel_agent": "reasoning",
 } 

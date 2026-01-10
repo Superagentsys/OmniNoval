@@ -3,7 +3,12 @@ import logging
 from typing import Literal, Optional, Union, Dict, Any
 
 from langchain_core.language_models import BaseLanguageModel
-from langchain_community.chat_models import ChatLiteLLM
+
+try:
+    from langchain_litellm import ChatLiteLLM
+except ImportError:
+    # Fallback to deprecated community version if langchain-litellm is not installed
+    from langchain_community.chat_models import ChatLiteLLM
 
 from src.config import (
     REASONING_MODEL,

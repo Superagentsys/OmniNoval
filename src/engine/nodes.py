@@ -10,7 +10,7 @@ import json_repair
 from langchain_core.messages import HumanMessage
 from langgraph.types import Command
 
-from src.agents import research_agent, coder_agent, browser_agent
+from src.agents import research_agent, coder_agent, browser_agent, vulun_agent
 from src.llms.llm import get_llm_by_type
 from src.config import TEAM_MEMBERS
 from src.config.agents import AGENT_LLM_MAP
@@ -206,6 +206,28 @@ def reporter_node(state: State) -> Command[Literal["supervisor"]]:
                 HumanMessage(
                     content=response_content,
                     name="reporter",
+                )
+            ]
+        },
+        goto="supervisor",
+    )
+
+
+def vulun_agent_node(state: State) -> Command[Literal["supervisor"]]:
+    """VulunAgent node that performs security testing and vulnerability assessment."""
+    logger.info("VulunAgent starting security assessment")
+    result = vulun_agent.invoke(state)
+    logger.info("VulunAgent completed security assessment")
+    response_content = result["messages"][-1].content
+    # 尝试修复可能的JSON输出
+    response_content = repair_json_output(response_content)
+    logger.debug(f"VulunAgent response: {response_content}")
+    return Command(
+        update={
+            "messages": [
+                HumanMessage(
+                    content=response_content,
+                    name="vulun_agent",
                 )
             ]
         },

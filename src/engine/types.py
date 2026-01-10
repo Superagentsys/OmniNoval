@@ -4,13 +4,16 @@ from typing import Dict, List, TypedDict, Union, Literal
 from langchain_core.messages import BaseMessage
 
 # Define the team members
-TEAM_MEMBERS = ["researcher", "coder", "browser", "reporter"]
+TEAM_MEMBERS = ["researcher", "coder", "browser", "reporter", "vulun_agent"]
 
 
 class Router(TypedDict):
     """Router schema for the agents graph."""
 
-    next: Union[Literal["researcher", "coder", "browser", "reporter", "FINISH"], str]
+    next: Union[
+        Literal["researcher", "coder", "browser", "reporter", "vulun_agent", "FINISH"],
+        str,
+    ]
 
 
 class State(TypedDict):

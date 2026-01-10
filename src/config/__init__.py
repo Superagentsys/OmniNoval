@@ -69,6 +69,18 @@ TEAM_MEMBER_CONFIGRATIONS = {
         "desc_for_llm": "Write a professional report based on the result of each step.",
         "is_optional": False,
     },
+    "vulun_agent": {
+        "name": "vulun_agent",
+        "desc": (
+            "专业的网络安全专家，负责漏洞检测、渗透测试和安全评估"
+        ),
+        "desc_for_llm": (
+            "Performs security testing, vulnerability scanning, penetration testing, and security risk assessment. "
+            "Uses various security tools like nmap, nuclei, gobuster, etc. to identify security vulnerabilities "
+            "and generate professional security reports."
+        ),
+        "is_optional": True,
+    },
 }
 
 TEAM_MEMBERS = list(TEAM_MEMBER_CONFIGRATIONS.keys())

@@ -1,0 +1,12 @@
+2026-01-09 23:01:23,402 - src.config.loader - INFO - Loaded configuration from conf.yaml
+2026-01-09 23:01:23,543 - src.config.loader - INFO - Loaded configuration from /OmniNoval/vulun_agent_config.yaml
+2026-01-09 23:01:23,544 - src.tools.security_tools - INFO - Loaded VulunAgent config from /OmniNoval/vulun_agent_config.yaml
+2026-01-09 23:01:23,555 - src.tools.security_tools - INFO - 可用安全工具: ['nmap', 'gobuster', 'sqlmap', 'nikto', 'dirb', 'masscan', 'httpx', 'amass']
+/OmniNoval/src/llms/llm.py:70: LangChainDeprecationWarning: The class `ChatLiteLLM` was deprecated in LangChain 0.3.24 and will be removed in 1.0. An updated version of the class exists in the `langchain-litellm package and should be used instead. To use it run `pip install -U `langchain-litellm` and import as `from `langchain_litellm import ChatLiteLLM``.
+  return ChatLiteLLM(**final_kwargs)
+2026-01-09 23:01:26,615 - src.agents.vulun_agent - INFO - VulunAgent 初始化完成，集成了智能决策引擎和参数优化器
+2026-01-09 23:01:26,693 - __main__ - INFO - Starting OmniNoval API server on 0.0.0.0:8888
+INFO:     Started server process [1112]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8888 (Press CTRL+C to quit)

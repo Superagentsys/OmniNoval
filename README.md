@@ -1,290 +1,146 @@
-# OmniNoval
+# 🚀 OmniNoval
 
-OmniNoval is an advanced multimodal multi-agent automation framework, built on LangGraph, supporting complex agent collaboration workflows.
+OmniNoval 是一个基于 **LangGraph** 构建的高级多模态多智能体（Multi-Agent）自动化渗透测试框架。它将尖端的 AI 决策能力与 150+ 专业安全工具相结合，实现了从资产发现、漏洞扫描到攻击链研判的全流程自动化。
 
-## 🌟 Features
+---
 
-- **Multi-agent Collaboration**: Supports multiple specialized agents working together, each with specific roles and expertise
-- **Multimodal Support**: Integrated vision models, supporting image understanding and processing
-- **Flexible Workflow Engine**: Extensible workflow system based on LangGraph
-- **Web Automation**: Integrated Playwright, supporting web browsing and automation operations
-- **RESTful API**: Provides complete API interfaces, supporting integration into existing systems
-- **Docker Support**: Provides complete containerized deployment solutions
-- **Flexible Configuration**: Supports multiple LLM providers and configuration options
+## 🌟 核心特性
 
-## 📋 Directory Structure
+- **🤖 智能决策引擎 (Intelligent Decision Engine)**: 
+    - **自主画像**: 自动识别目标类型（Web、网络、域名、二进制文件等）。
+    - **工具自选**: 基于目标特征自动从 150+ 工具库中筛选最优工具组合。
+    - **动态参数优化**: 智能调整工具参数（如字典选择、扫描频率），最大化探测效果。
+- **⚡ 增强型进程与缓存管理**: 
+    - **资源感知**: 实时监控系统 CPU/内存，动态调整执行优先级。
+    - **智能缓存**: 基于 LRU 和 TTL 机制缓存工具执行结果，大幅提升重复任务响应速度。
+- **🛡️ 专门化安全智能体群**: 
+    - **BugBountyAgent**: 专注于大规模资产发现与 Web 漏洞挖掘。
+    - **CTFAgent**: 擅长逆向工程、密码学分析与二进制漏洞利用。
+    - **CVEIntelAgent**: 实时搜寻漏洞情报、PoC 及修复方案。
+    - **VulunAgent**: 核心协同代理，负责全流程安全评估。
+- **🧰 150+ 安全工具库**: 集成 Nmap, Nuclei, Sqlmap, Gobuster, Metasploit 等涵盖网络、Web、云原生及二进制分析的全方位工具链。
+- **🌐 高级 Web 自动化**: 集成 Playwright 和 Headless Chrome，支持动态内容抓取与复杂交互分析。
 
-```
+---
+
+## 📋 目录结构
+
+```text
 OmniNoval/
-├── assets/                 # Static resource files
-├── src/                    # Source code directory
-│   ├── agents/            # Agent definitions
-│   ├── api/               # API interfaces
-│   ├── config/            # Configuration management
-│   ├── engine/            # Workflow engine
-│   ├── llms/              # LLM abstraction layer
-│   ├── prompts/           # Prompt templates
-│   ├── service/           # Service layer
-│   ├── tools/             # Toolset
-│   ├── utils/             # Utility functions
-│   └── workflow.py        # Workflow entry
-├── conf.yaml.example      # Configuration file example
-├── docker-compose.yml     # Docker Compose configuration
-├── Dockerfile            # Docker image configuration
-├── main.py               # CLI entry
-├── server.py             # API server entry
-├── pyproject.toml        # Project configuration
-└── README.md             # Project documentation
+├── src/
+│   ├── agents/           # 专门化智能体定义 (BugBounty, CTF, CVE 等)
+│   ├── api/              # FastAPI 接口定义与应用入口
+│   ├── config/           # 智能体、模型与工具配置管理
+│   ├── engine/           # 核心引擎 (IDE, 参数优化器, 工作流图)
+│   ├── llms/             # LLM 抽象层 (支持 LiteLLM, langchain-litellm)
+│   ├── prompts/          # 专门化安全提示词模板
+│   ├── tools/            # 150+ 工具集成接口 (SecurityTools, AdvancedTools)
+│   ├── utils/            # 增强型进程管理器与缓存工具
+│   └── workflow.py       # LangGraph 工作流核心逻辑
+├── main.py               # 增强型 CLI 入口
+├── server.py             # 专业版 API 服务器启动脚本
+├── vulun_agent_config.yaml # 安全工具与扫描策略配置
+├── pyproject.toml        # 项目依赖与构建配置
+└── README.md
 ```
 
-## 🚀 Quick Start
+---
 
-### Environment Requirements
+## 🚀 快速开始
 
+### 环境要求
 - Python 3.12+
-- uv package manager (recommended)
+- [uv](https://github.com/astral-sh/uv) 包管理器 (强烈推荐)
 
-### Local Installation
+### 安装步骤
 
-1. **Clone the Project**
+1. **克隆项目**
    ```bash
    git clone <repository-url>
    cd OmniNoval
    ```
 
-2. **Install Dependencies**
+2. **安装依赖**
    ```bash
-   # Install dependencies using uv
+   # 使用 uv 同步环境
    uv sync
    
-   # Install Playwright browser
+   # 安装浏览器内核
    uv run playwright install chromium --with-deps
    ```
 
-3. **Configure Environment**
+3. **配置环境**
+   复制配置文件并填写你的 API Keys：
    ```bash
-   # Copy configuration file
    cp conf.yaml.example conf.yaml
-   
-   # Edit configuration file, set your API keys
    vim conf.yaml
    ```
 
-4. **Run the Project**
-   ```bash
-   # CLI mode
-   uv run main.py "Your query"
-   
-   # API server mode
-   uv run server.py --reload
-   ```
+---
 
-### Using Makefile
+## 📖 使用指南
 
-The project provides convenient Makefile commands:
+### 1. 命令行模式 (CLI)
+使用 `main.py` 进行交互或直接执行指令。
 
-```bash
-# Initial setup
-make setup
+- **交互式/直接执行**:
+  ```bash
+  uv run main.py "对 https://example.com 进行全面的安全评估"
+  ```
+- **智能分析模式 (IDE)**:
+  仅使用决策引擎分析目标并推荐工具，不执行实际扫描：
+  ```bash
+  uv run main.py --analyze "192.168.1.1/24"
+  ```
 
-# Run CLI
-make run
-
-# Start development server
-make dev
-
-# Start production server
-make api
-
-# Run tests
-make test
-
-# Clean environment
-make clean
-```
-
-## 🐳 Docker Deployment
-
-### Using Docker Compose (Recommended)
+### 2. API 模式
+启动专业版后端服务，支持实时监控和工具自检。
 
 ```bash
-# Start production environment
-docker-compose up api
-
-# Start development environment (supports hot reload)
-docker-compose up dev
+# 启动服务器并自动安装缺失的工具
+uv run server.py --host 0.0.0.0 --port 8000 --install-tools --reload
 ```
 
-### Manual Docker Image Build
-
-```bash
-# Build image
-docker build -t omninova .
-
-# Run container
-docker run -p 8000:8000 -v $(pwd)/.env:/app/.env -v $(pwd)/conf.yaml:/app/conf.yaml omninova
-```
-
-## ⚙️ Configuration Instructions
-
-### Configuration File Structure
-
-The project supports two configuration methods:
-- `conf.yaml` configuration file (recommended)
-- `.env` environment variable file (compatibility mode)
-
-### LLM Configuration
-
-Configure different LLM models in `conf.yaml`:
-
-```yaml
-# Reasoning Model
-REASONING_MODEL:
-  model: "volcengine/ep-xxxx"
-  api_key: $REASONING_API_KEY
-  api_base: $REASONING_BASE_URL
-
-# Basic Model
-BASIC_MODEL:
-  model: "azure/gpt-4o-2024-08-06"
-  api_base: $AZURE_API_BASE
-  api_version: $AZURE_API_VERSION
-  api_key: $AZURE_API_KEY
-
-# Vision Model
-VISION_MODEL:
-  model: "azure/gpt-4o-2024-08-06"
-  api_base: $AZURE_API_BASE
-  api_version: $AZURE_API_VERSION
-  api_key: $AZURE_API_KEY
-```
-
-### Environment Variables
-
-Create `.env` file to set sensitive information:
-
-```bash
-# API Keys
-REASONING_API_KEY=your_reasoning_api_key
-AZURE_API_KEY=your_azure_api_key
-
-# API Endpoints
-REASONING_BASE_URL=https://api.example.com
-AZURE_API_BASE=https://your-resource.openai.azure.com
-AZURE_API_VERSION=2024-02-15-preview
-```
-
-## 📖 Usage
-
-### CLI Mode
-
-```bash
-# Direct run
-python main.py "Help me analyze the content of this webpage"
-
-# Interactive mode
-python main.py
-# Then input your query
-```
-
-### API Mode
-
-Start API server:
-
-```bash
-python server.py --host 0.0.0.0 --port 8000 --reload
-```
-
-API Endpoints:
-- `GET /health` - Health check
-- `POST /workflow` - Execute workflow
-- `GET /docs` - API documentation (Swagger UI)
-
-### Workflow Example
-
-```python
-from src.workflow import run_agent_workflow
-
-# Execute workflow
-result = run_agent_workflow(
-    user_input="Help me analyze the content of this webpage",
-    debug=True
-)
-
-# View result
-print(result["messages"])
-```
-
-## 🔧 Development Guide
-
-### Project Structure Explanation
-
-- **agents/**: Defines various agent roles and behaviors
-- **engine/**: Workflow engine, built on LangGraph
-- **llms/**: LLM abstraction layer, supports multiple model providers
-- **tools/**: Toolset, including web browsing, search, etc.
-- **api/**: RESTful API interfaces
-
-### Adding New Agents
-
-1. Create new agent file in `src/agents/`
-2. Register agent configuration in `src/config/`
-3. Integrate new agent in workflow
-
-### Adding New Tools
-
-1. Create tool file in `src/tools/`
-2. Implement tool interface
-3. Register and use tool in agents
-
-### Code Standards
-
-The project uses the following tools for code quality control:
-
-```bash
-# Code formatting
-uv run black .
-
-# Code checking
-uv run ruff check .
-
-# Run tests
-uv run pytest
-```
-
-## 🤝 Contribution Guide
-
-1. Fork the project
-2. Create feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to branch (`git push origin feature/AmazingFeature`)
-5. Open Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🆘 FAQ
-
-### Q: How to switch different LLM providers?
-A: Modify model configuration in `conf.yaml`, supports all LiteLLM compatible providers.
-
-### Q: How to add custom tools?
-A: Create new tool class in `src/tools/` directory, and register use in agents.
-
-### Q: How to debug workflow?
-A: Set `debug=True` parameter, or check log output.
-
-### Q: What browser automation features are supported?
-A: Based on Playwright, supports all features of Chromium browser.
-
-## 📞 Support
-
-If you encounter problems or have suggestions, please:
-1. Check [Issues](../../issues) page
-2. Create new Issue
-3. Contact development team
+**关键 API 端点**:
+- `GET /health`: 查看系统健康度、工具可用性及进程统计。
+- `POST /workflow`: 提交自动化渗透测试任务。
+- `POST /api/intelligence/analyze-target`: 调用决策引擎获取攻击建议。
+- `GET /api/processes/list`: 监控实时运行的安全工具进程。
 
 ---
 
-**OmniNoval** - Making multi-agent collaboration simple and efficient 🚀
+## ⚙️ 核心配置
+
+在 `vulun_agent_config.yaml` 中，你可以自定义扫描策略和工具路径：
+
+```yaml
+SCAN_STRATEGIES:
+  quick:
+    tools: ["nmap", "nuclei"]
+    port_range: "1-1000"
+  comprehensive:
+    tools: ["nmap", "masscan", "nuclei", "gobuster", "nikto", "subfinder", "amass"]
+    port_range: "1-65535"
+
+CACHE:
+  enabled: true
+  ttl: 3600
+```
+
+---
+
+## 🤝 贡献与参与
+
+我们欢迎安全社区的贡献！
+- **新增工具**: 在 `src/tools/` 中实现新的工具接口。
+- **优化智能体**: 在 `src/prompts/template/` 中改进提示词逻辑。
+
+---
+
+## 📝 许可证
+
+本项目基于 MIT 许可证开源。
+
+---
+
+**OmniNoval-VulunAgent** - 让 AI 成为你的网络安全专家 🚀

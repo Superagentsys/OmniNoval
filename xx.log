@@ -1,0 +1,117 @@
+2026-01-09 23:30:36,985 - src.config.loader - INFO - Loaded configuration from conf.yaml
+2026-01-09 23:30:37,103 - src.config.loader - INFO - Loaded configuration from /OmniNoval/vulun_agent_config.yaml
+2026-01-09 23:30:37,104 - src.tools.security_tools - INFO - Loaded VulunAgent config from /OmniNoval/vulun_agent_config.yaml
+2026-01-09 23:30:37,111 - src.tools.security_tools - INFO - 可用安全工具: ['nmap', 'gobuster', 'sqlmap', 'nikto', 'dirb', 'masscan', 'httpx', 'amass']
+/OmniNoval/src/llms/llm.py:70: LangChainDeprecationWarning: The class `ChatLiteLLM` was deprecated in LangChain 0.3.24 and will be removed in 1.0. An updated version of the class exists in the `langchain-litellm package and should be used instead. To use it run `pip install -U `langchain-litellm` and import as `from `langchain_litellm import ChatLiteLLM``.
+  return ChatLiteLLM(**final_kwargs)
+2026-01-09 23:30:39,634 - src.agents.vulun_agent - INFO - VulunAgent 初始化完成，集成了智能决策引擎和参数优化器
+2026-01-09 23:30:39,715 - __main__ - INFO - Starting OmniNoval API server on 0.0.0.0:8888
+INFO:     Started server process [1300]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8888 (Press CTRL+C to quit)
+
+    ========================================================================
+       ____                 _ _   _                 _ 
+      / __ \               (_) \ | |               | |
+     | |  | |_ __ ___  _ __  _|  \| | _____   ____ _| |
+     | |  | | '_ ` _ \| '_ \| | . ` |/ _ \ \ / / _` | |
+     | |__| | | | | | | | | | | |\  | (_) \ V / (_| | |
+      \____/|_| |_| |_|_| |_|_|_| \_|\___/ \_/ \__,_|_|
+                                                        
+      Advanced AI-Powered Cybersecurity Automation Platform
+    ========================================================================
+    
+INFO:     192.168.65.1:34625 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:55250 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:61994 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:26181 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:24049 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:24867 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:55111 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:42067 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:38119 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:41886 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:17481 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:59372 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:53967 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:56646 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:28280 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:43508 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:30393 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:43260 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:37406 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:26278 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:45179 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:32657 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:31111 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:45232 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:34778 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:43174 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:54592 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:44265 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:54649 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:21472 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:30969 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:36224 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:43933 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:18987 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:16301 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:48037 - "GET / HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:37079 - "GET / HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:36111 - "GET / HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:62331 - "GET / HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:48037 - "GET /tree HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:37079 - "GET /tree HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:62331 - "GET /tree HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:36111 - "GET /tree HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:37079 - "GET /api/kernelspecs?1768035228145 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:48037 - "GET /api/kernelspecs?1768035228143 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:36111 - "GET /api/kernelspecs?1768035228146 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:62331 - "GET /api/kernelspecs?1768035228147 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:41415 - "GET / HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:19445 - "GET /api/kernels?1768035228144 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:39898 - "GET /api/kernels?1768035228148 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:34182 - "GET /api/kernels?1768035228145 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:37425 - "GET /api/kernels?1768035228146 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:55929 - "GET /api/kernels?1768035228802 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:18009 - "GET /api/kernels?1768035228804 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:23713 - "GET /api/sessions?1768035228803 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:53205 - "GET /api/sessions?1768035228801 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:54641 - "GET /api/kernels?1768035228800 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:18156 - "GET /api/sessions?1768035228805 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:44072 - "GET /api/kernels?1768035228806 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:44658 - "GET /api/sessions?1768035228807 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:31898 - "GET /tree HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:45392 - "GET /api/kernelspecs?1768035228857 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:64540 - "GET /api/kernelspecs?1768035228855 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:39653 - "GET /api/kernelspecs?1768035228854 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:18532 - "GET /api/kernelspecs?1768035228853 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:48218 - "GET /api/kernelspecs?1768035228966 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:25305 - "GET /api/kernels?1768035228930 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:30328 - "GET /api/kernels?1768035228966 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:57617 - "GET /api/kernelspecs?1768035228967 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:55780 - "GET /api/kernels?1768035228968 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:28167 - "GET /api/sessions?1768035229001 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:30960 - "GET /api/kernelspecs?1768035228969 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:47302 - "GET /api/kernels?1768035228969 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:35521 - "GET /api/kernelspecs?1768035228929 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:35964 - "GET /api/kernels?1768035228972 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:18730 - "GET /api/sessions?1768035228980 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:58887 - "GET /api/kernels?1768035228981 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:47623 - "GET /api/sessions?1768035228981 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:19480 - "GET /api/kernels?1768035228980 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:55672 - "GET /api/kernels?1768035228982 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:39069 - "GET /api/sessions?1768035228982 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:25542 - "GET /api/sessions?1768035228981 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:45542 - "GET /api/kernels?1768035229000 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:53078 - "GET /api/kernelspecs?1768035228996 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:37048 - "GET /api/kernels?1768035228997 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:30678 - "GET /api/kernels?1768035229229 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:31555 - "GET /api/kernels?1768035229232 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:42670 - "GET /api/sessions?1768035229235 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:58280 - "GET /api/kernelspecs?1768035229228 HTTP/1.1" 404 Not Found
+INFO:     192.168.65.1:38897 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:33122 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:37910 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:33498 - "GET /health HTTP/1.1" 200 OK
