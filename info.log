@@ -1,12 +1,24 @@
-2026-01-09 23:01:23,402 - src.config.loader - INFO - Loaded configuration from conf.yaml
-2026-01-09 23:01:23,543 - src.config.loader - INFO - Loaded configuration from /OmniNoval/vulun_agent_config.yaml
-2026-01-09 23:01:23,544 - src.tools.security_tools - INFO - Loaded VulunAgent config from /OmniNoval/vulun_agent_config.yaml
-2026-01-09 23:01:23,555 - src.tools.security_tools - INFO - 可用安全工具: ['nmap', 'gobuster', 'sqlmap', 'nikto', 'dirb', 'masscan', 'httpx', 'amass']
-/OmniNoval/src/llms/llm.py:70: LangChainDeprecationWarning: The class `ChatLiteLLM` was deprecated in LangChain 0.3.24 and will be removed in 1.0. An updated version of the class exists in the `langchain-litellm package and should be used instead. To use it run `pip install -U `langchain-litellm` and import as `from `langchain_litellm import ChatLiteLLM``.
-  return ChatLiteLLM(**final_kwargs)
-2026-01-09 23:01:26,615 - src.agents.vulun_agent - INFO - VulunAgent 初始化完成，集成了智能决策引擎和参数优化器
-2026-01-09 23:01:26,693 - __main__ - INFO - Starting OmniNoval API server on 0.0.0.0:8888
-INFO:     Started server process [1112]
+2026-01-26 15:13:53,302 - src.config.loader - INFO - Loaded configuration from conf.yaml
+2026-01-26 15:13:53,412 - src.config.loader - INFO - Loaded configuration from /omninoval/vulun_agent_config.yaml
+2026-01-26 15:13:53,412 - src.tools.security_tools - INFO - Loaded VulunAgent config from /omninoval/vulun_agent_config.yaml
+2026-01-26 15:13:53,489 - src.tools.security_tools - INFO - 可用安全工具: ['nmap', 'gobuster', 'dirb', 'nikto', 'sqlmap', 'hydra', 'john', 'hashcat', 'masscan', 'nbtscan', 'arp-scan', 'responder', 'nxc', 'rpcclient', 'enum4linux', 'ffuf', 'wfuzz', 'httpx', 'wafw00f', 'wpscan', 'patator', 'hash-identifier', 'radare2', 'binwalk', 'ropgadget', 'checksec', 'objdump', 'pwntools', 'angr', 'exiftool', 'strings', 'xxd', 'file', 'photorec', 'testdisk', 'scalpel', 'bulk-extractor', 'amass', 'fierce', 'dnsenum', 'theharvester', 'recon-ng', 'spiderfoot', 'have-i-been-pwned', 'metasploit', 'exploit-db', 'searchsploit', 'curl', 'kismet', 'wireshark', 'tshark', 'tcpdump', 'smbmap', 'sleuthkit', 'evil-winrm', 'msfvenom']
+2026-01-26 15:13:56,556 - src.agents.vulun_agent - INFO - VulunAgent 初始化完成，集成了智能决策引擎和参数优化器
+2026-01-26 15:13:56,660 - __main__ - INFO - Starting OmniNoval API server on 0.0.0.0:8888
+INFO:     Started server process [1552]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     Uvicorn running on http://0.0.0.0:8888 (Press CTRL+C to quit)
+ERROR:    [Errno 98] error while attempting to bind on address ('0.0.0.0', 8888): [errno 98] address already in use
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+
+    ========================================================================
+       ____                 _ _   _                 _ 
+      / __ \               (_) \ | |               | |
+     | |  | |_ __ ___  _ __  _|  \| | _____   ____ _| |
+     | |  | | '_ ` _ \| '_ \| | . ` |/ _ \ \ / / _` | |
+     | |__| | | | | | | | | | | |\  | (_) \ V / (_| | |
+      \____/|_| |_| |_|_| |_|_|_| \_|\___/ \_/ \__,_|_|
+                                                        
+      Advanced AI-Powered Cybersecurity Automation Platform
+    ========================================================================
+    

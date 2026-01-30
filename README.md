@@ -39,6 +39,7 @@ OmniNoval/
 │   └── workflow.py       # LangGraph 工作流核心逻辑
 ├── main.py               # 增强型 CLI 入口
 ├── server.py             # 专业版 API 服务器启动脚本
+├── frontend/             # ✅ 前端（纯静态 Dashboard，独立部署/启动）
 ├── vulun_agent_config.yaml # 安全工具与扫描策略配置
 ├── pyproject.toml        # 项目依赖与构建配置
 └── README.md
@@ -106,6 +107,43 @@ uv run server.py --host 0.0.0.0 --port 8000 --install-tools --reload
 - `POST /workflow`: 提交自动化渗透测试任务。
 - `POST /api/intelligence/analyze-target`: 调用决策引擎获取攻击建议。
 - `GET /api/processes/list`: 监控实时运行的安全工具进程。
+
+---
+
+## 🧩 前后端分离（Dashboard）
+
+本项目的 Dashboard 已从后端剥离为 **纯静态前端**：`frontend/index.html`。后端只提供 API，并通过 CORS 支持跨域（含 SSE `EventSource`）。
+
+### 启动后端（API）
+
+```bash
+uv run server.py --host 0.0.0.0 --port 8000 --reload
+```
+
+如需限制允许的前端来源（推荐生产环境配置），设置环境变量（逗号分隔）：
+
+```bash
+export OMNINOVAL_CORS_ORIGINS="http://localhost:5173,http://127.0.0.1:5173"
+uv run server.py --host 0.0.0.0 --port 8000 --reload
+```
+
+### 启动前端（静态托管）
+
+任选一种方式启动静态服务器（示例用 Python 标准库）：
+
+```bash
+cd frontend
+python3 -m http.server 5173
+```
+
+浏览器打开前端后，默认会请求 `http://localhost:8000`。
+
+### 配置前端 API 地址（API_BASE）
+
+前端支持两种方式指定后端地址：
+
+- **URL 参数**：`?api=http://127.0.0.1:8000`（会自动写入 localStorage）
+- **页面侧边栏**：点击 **Set API** 手动设置
 
 ---
 

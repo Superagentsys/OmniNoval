@@ -222,6 +222,7 @@ class EnhancedProcessManager:
                     
                     # Handle failure
                     error_msg = result["stderr"] or result["stdout"]
+                    logger.error(f"Command {tool_name} failed (attempt {attempt}). Stderr: {result['stderr']}")
                     error_type = self.error_handler.classify_error(error_msg)
                     strategy = self.error_handler.get_recovery_strategy(tool_name, error_type, attempt)
                     

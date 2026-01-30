@@ -24,6 +24,7 @@ dependencies = [
     "browser-use>=0.1.4",
     "playwright>=1.41.0",
     "pyyaml>=6.0.1",
+    "mcp>=1.13.1",
 ]
 
 [project.optional-dependencies]

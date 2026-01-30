@@ -7,6 +7,7 @@ import logging
 import re
 import socket
 import urllib.parse
+import ipaddress
 from enum import Enum
 from typing import Dict, List, Any, Optional, Set, Tuple
 from dataclasses import dataclass, asdict, field
@@ -255,7 +256,7 @@ class IntelligentDecisionEngine:
         }
 
     def _initialize_attack_patterns(self) -> Dict[str, List[Dict[str, Any]]]:
-        """Initialize common attack patterns for different scenarios"""
+        """Initialize common attack patterns for different scenarios - 迁移自 HexStrike AI"""
         return {
             "web_reconnaissance": [
                 {"tool": "nmap", "priority": 1, "params": {"scan_type": "-sV -sC", "ports": "80,443,8080,8443"}},
@@ -278,43 +279,94 @@ class IntelligentDecisionEngine:
             "network_discovery": [
                 {"tool": "arp-scan", "priority": 1, "params": {"local_network": True}},
                 {"tool": "rustscan", "priority": 2, "params": {"ulimit": 5000, "scripts": True}},
-                {"tool": "nmap", "priority": 3, "params": {"scan_type": "-sS", "os_detection": True, "version_detection": True}},
+                {"tool": "nmap", "priority": 3, "params": {"scan_type": "-sT", "os_detection": False, "version_detection": True}},
                 {"tool": "masscan", "priority": 4, "params": {"rate": 1000, "ports": "1-65535", "banners": True}},
                 {"tool": "enum4linux-ng", "priority": 5, "params": {"shares": True, "users": True, "groups": True}},
                 {"tool": "nbtscan", "priority": 6, "params": {"verbose": True}},
                 {"tool": "smbmap", "priority": 7, "params": {"recursive": True}},
                 {"tool": "rpcclient", "priority": 8, "params": {"commands": "enumdomusers;enumdomgroups;querydominfo"}}
+            ],
+            "vulnerability_assessment": [
+                {"tool": "nuclei", "priority": 1, "params": {"severity": "critical,high,medium", "update": True}},
+                {"tool": "jaeles", "priority": 2, "params": {"threads": 20, "timeout": 20}},
+                {"tool": "dalfox", "priority": 3, "params": {"mining_dom": True, "mining_dict": True}},
+                {"tool": "nikto", "priority": 4, "params": {"comprehensive": True}},
+                {"tool": "sqlmap", "priority": 5, "params": {"crawl": 2, "batch": True}}
+            ],
+            "binary_exploitation": [
+                {"tool": "checksec", "priority": 1, "params": {}},
+                {"tool": "ghidra", "priority": 2, "params": {"analysis_timeout": 300, "output_format": "xml"}},
+                {"tool": "ropper", "priority": 3, "params": {"gadget_type": "rop", "quality": 2}},
+                {"tool": "one-gadget", "priority": 4, "params": {"level": 1}},
+                {"tool": "pwntools", "priority": 5, "params": {"exploit_type": "local"}},
+                {"tool": "gdb", "priority": 6, "params": {"commands": "checksec\ninfo functions\nquit"}}
+            ],
+            "cloud_assessment": [
+                {"tool": "prowler", "priority": 1, "params": {"provider": "aws", "output_format": "json"}},
+                {"tool": "trivy", "priority": 2, "params": {"scan_type": "image", "severity": "HIGH,CRITICAL"}},
+                {"tool": "kube-hunter", "priority": 3, "params": {"report": "json"}},
+                {"tool": "checkov", "priority": 4, "params": {"output_format": "json"}}
+            ],
+            "bug_bounty_full": [
+                {"tool": "amass", "priority": 1, "params": {"mode": "enum"}},
+                {"tool": "subfinder", "priority": 2, "params": {"silent": True}},
+                {"tool": "httpx", "priority": 3, "params": {"probe": True}},
+                {"tool": "katana", "priority": 4, "params": {"depth": 3}},
+                {"tool": "nuclei", "priority": 5, "params": {"severity": "critical,high"}},
+                {"tool": "sqlmap", "priority": 6, "params": {"batch": True}},
+                {"tool": "dalfox", "priority": 7, "params": {"mining_dom": True}}
             ]
         }
 
     def analyze_target(self, target: str) -> TargetProfile:
         """Analyze target and create comprehensive profile"""
-        profile = TargetProfile(target=target)
-        profile.target_type = self._determine_target_type(target)
+        normalized_target = (target or "").strip().rstrip(";")
+        profile = TargetProfile(target=normalized_target)
+        profile.target_type = self._determine_target_type(normalized_target)
 
         if profile.target_type in [TargetType.WEB_APPLICATION, TargetType.API_ENDPOINT]:
-            profile.ip_addresses = self._resolve_domain(target)
-            profile.technologies = self._detect_technologies(target)
-            profile.cms_type = self._detect_cms(target)
+            profile.ip_addresses = self._resolve_domain(normalized_target)
+            profile.technologies = self._detect_technologies(normalized_target)
+            profile.cms_type = self._detect_cms(normalized_target)
 
         profile.attack_surface_score = self._calculate_attack_surface(profile)
         profile.risk_level = self._determine_risk_level(profile)
         profile.confidence_score = self._calculate_confidence(profile)
 
-        logger.info(f"Target analyzed: {target} as {profile.target_type.value}, Risk: {profile.risk_level}")
+        logger.info(
+            f"Target analyzed: {normalized_target} as {profile.target_type.value}, Risk: {profile.risk_level}"
+        )
         return profile
 
     def _determine_target_type(self, target: str) -> TargetType:
-        if target.startswith(('http://', 'https://')):
+        target = (target or "").strip().rstrip(";")
+
+        if target.startswith(("http://", "https://")):
             parsed = urllib.parse.urlparse(target)
-            if '/api/' in parsed.path or parsed.path.endswith('/api'):
+            if "/api/" in parsed.path or parsed.path.endswith("/api"):
                 return TargetType.API_ENDPOINT
             return TargetType.WEB_APPLICATION
-        if re.match(r'^(\d{1,3}\.){3}\d{1,3}$', target):
+
+        # IP range like "117.131.53.56-117.131.53.63"
+        if "-" in target:
+            left, right = target.split("-", 1)
+            try:
+                ipaddress.ip_address(left.strip())
+                ipaddress.ip_address(right.strip())
+                return TargetType.NETWORK_HOST
+            except ValueError:
+                pass
+
+        # CIDR or single IP (single IP will be treated as /32 by ip_network(strict=False))
+        try:
+            ipaddress.ip_network(target, strict=False)
             return TargetType.NETWORK_HOST
-        if re.match(r'^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$', target):
+        except ValueError:
+            pass
+
+        if re.match(r"^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$", target):
             return TargetType.WEB_APPLICATION
-        if target.endswith(('.exe', '.bin', '.elf', '.so', '.dll')):
+        if target.endswith((".exe", ".bin", ".elf", ".so", ".dll")):
             return TargetType.BINARY_FILE
         return TargetType.UNKNOWN
 
@@ -396,8 +448,19 @@ class IntelligentDecisionEngine:
 
     def create_attack_chain(self, profile: TargetProfile, objective: str = "comprehensive") -> AttackChain:
         chain = AttackChain(profile)
+        
+        # Select pattern based on objective or target type
         pattern_key = "web_reconnaissance"
-        if profile.target_type == TargetType.API_ENDPOINT:
+        
+        if objective == "vulnerability_assessment":
+            pattern_key = "vulnerability_assessment"
+        elif objective == "binary_exploitation" or profile.target_type == TargetType.BINARY_FILE:
+            pattern_key = "binary_exploitation"
+        elif objective == "cloud_assessment" or profile.target_type == TargetType.CLOUD_SERVICE:
+            pattern_key = "cloud_assessment"
+        elif objective == "bug_bounty":
+            pattern_key = "bug_bounty_full"
+        elif profile.target_type == TargetType.API_ENDPOINT:
             pattern_key = "api_testing"
         elif profile.target_type == TargetType.NETWORK_HOST:
             pattern_key = "network_discovery"

@@ -1,0 +1,400 @@
+2026-01-11 16:53:59,835 - src.config.loader - INFO - Loaded configuration from conf.yaml
+2026-01-11 16:53:59,968 - src.config.loader - INFO - Loaded configuration from /Users/mac/Documents/work/CompaniesStartups/奥米智能/dev/OmniNoval/vulun_agent_config.yaml
+2026-01-11 16:53:59,968 - src.tools.security_tools - INFO - Loaded VulunAgent config from /Users/mac/Documents/work/CompaniesStartups/奥米智能/dev/OmniNoval/vulun_agent_config.yaml
+2026-01-11 16:54:02,059 - src.tools.security_tools - INFO - 可用安全工具: ['nmap', 'httpx', 'ropgadget', 'checksec', 'objdump', 'pwntools', 'angr', 'strings', 'xxd', 'file', 'have-i-been-pwned', 'cu2026-01-11 16:57:29,358 - src.tools.advanced_security_tools - ERROR - 安装工具 rustscan 时出错: Command '['cargo', 'install', 'rustscan']' timed out after 300 seconds
+2026-01-11 16:57:29,372 - src.tools.advanced_security_tools - INFO - 安装工具: unicornscan
+2026-01-11 16:57:29,551 - src.tools.advanced_security_tools - ERROR - 安装工具 unicornscan 时出错: [Errno 2] No such file or directory: 'apt'
+2026-01-11 16:57:
+    ========================================================================
+       ____                 _ _   _                 _ 
+      / __ \               (_) \ | |               | |
+     | |  | |_ __ ___  _ __  _|  \| | _____   ____ _| |
+     | |  | | '_ ` _ \| '_ \| | . ` |/ _ \ \ / / _` | |
+     | |__| | | | | | | | | | | |\  | (_) \ V / (_| | |
+      \____/|_| |_| |_|_| |_|_|_| \_|\___/ \_/ \__,_|_|
+                                                        
+      Advanced AI-Powered Cybersecurity Automation Platform
+    ========================================================================
+    
+INFO:     127.0.0.1:64735 - "GET /health HTTP/1.1" 200 OK
+2026-01-11 16:58:00,245 - src.engine.decision_engine - INFO - Target analyzed: 117.131.35.112 as network_host, Risk: critical
+2026-01-11 16:58:00,637 - src.utils.process_manager - INFO - Switching from nmap to alternative tool: rustscan
+2026-01-11 16:58:00,648 - src.utils.process_manager - ERROR - Error running rustscan: [Errno 2] No such file 2026-01-11 16:58:05,887 - src.tools.advanced_security_tools - INFO - 工具 gobuster 安装成�INFO:     127.0.0.1:50588 - "POST /api/command HTTP/1.1" 200 OK
+2026-01-11 16:59:50,336 - src.engine.decision_engine - INFO - Target analyzed: 117.131.35.112 as network_host, Risk: critical
+2026-01-11 16:59:50,701 - src.utils.process_manager - INFO - Switching from nmap to alternative tool: rustscan
+2026-01-11 16:59:50,710 - src.utils.process_manager - ERROR - Error running rustscan: [Errno 2] No such file or directory: 'rustscan'
+INFO:     127.0.0.1:52433 - "POST /api/tools/execute HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54558 - "GET /health HTTP/1.1" 200 OK
+2026-01-11 17:01:29,011 - src.engine.decision_engine - INFO - Target analyzed: 117.131.35.112 as network_host, Risk: critical
+2026-01-11 17:01:29,402 - src.utils.process_manager - INFO - Switching from nmap to alternative tool: rustscan
+2026-01-11 17:01:29,412 - src.utils.process_manager - ERROR - Error running rustscan: [Errno 2] No such file or directory: 'rustscan'
+INFO:     127.0.0.1:54809 - "POST /api/intelligence/smart-scan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55059 - "POST /api/command HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55509 - "POST /api/command HTTP/1.1" 200 OK
+2026-01-11 17:02:16,193 - src.engine.decision_engine - INFO - Target analyzed: 117.131.35.112 as network_host, Risk: critical
+2026-01-11 17:02:16,550 - src.utils.process_manager - INFO - Switching from nmap to alternative tool: rustscan
+2026-01-11 17:02:16,560 - src.utils.process_manager - ERROR - Error running rustscan: [Errno 2] No such file or directory: 'rustscan'
+INFO:     127.0.0.1:55910 - "POST /api/tools/execute HTTP/1.1" 200 OK
+2026-01-11 17:03:00,704 - src.engine.decision_engine - INFO - Target analyzed: 117.131.35.112 as network_host, Risk: critical
+2026-01-11 17:03:01,240 - src.utils.process_manager - INFO - Switching from nmap to alternative tool: rustscan
+2026-01-11 17:03:01,250 - src.utils.process_manager - ERROR - Error running rustscan: [Errno 2] No such file or directory: 'rustscan'
+INFO:     127.0.0.1:57257 - "POST /api/tools/execute HTTP/1.1" 200 OK
+2026-01-11 17:04:04,115 - src.engine.decision_engine - INFO - Target analyzed: 117.131.35.112 as network_host, Risk: critical
+2026-01-11 17:04:04,518 - src.utils.process_manager - INFO - Switching from nmap to alternative tool: rustscan
+2026-01-11 17:04:04,529 - src.utils.process_manager - ERROR - Error running rustscan: [Errno 2] No such file or directory: 'rustscan'
+INFO:     127.0.0.1:58775 - "POST /api/tools/execute HTTP/1.1" 200 OK
+security_tools - INFO - 安装工具: hakrawler
+2026-01-11 16:59:01,450 - src.tools.advanced_security_tools - INFO - 工具 hakrawler 安装成功
+2026-01-11 16:59:01,450 - src.tools.advanced_security_tools - INFO - 安装工具: gospider
+2026-01-11 16:59:26,673 - src.tools.advanced_security_tools - INFO - 工具 gospider 安装成功
+2026-01-11 16:59:26,673 - src.tools.advanced_security_tools - INFO - 安装工具: owasp-zap
+2026-01-11 16:59:26,682 - src.tools.advanced_security_tools - ERROR - 安装工具 owasp-zap 时出错: [Errno 2] No such file or directory: 'apt'
+2026-01-11 16:59:26,682 - src.tools.advanced_security_tools - INFO - 安装工具: wpscan
+2026-01-11 17:04:26,721 - src.tools.advanced_security_tools - ERROR - 安装工具 wpscan 时出错: Command '['gem', 'install', 'wpscan']' timed out after 300 seconds
+2026-01-11 17:04:26,722 - src.tools.advanced_security_tools - INFO - 安装工具: joomscan
+2026-01-11 17:04:26,741 - src.tools.advanced_security_tools - ERROR - 安装工具 joomscan 时出错: [Errno 2] No such file or directory: 'apt'
+2026-01-11 17:04:26,742 - src.tools.advanced_security_tools - INFO - 安装工具: droopescan
+2026-01-11 17:04:32,592 - src.tools.advanced_security_tools - INFO - 工具 droopescan 安装成功
+2026-01-11 17:04:32,592 - src.tools.advanced_security_tools - INFO - 安装工具: nuclei
+2026-01-11 17:05:55,222 - src.tools.advanced_security_tools - INFO - 工具 nuclei 安装成功
+2026-01-11 17:05:55,223 - src.tools.advanced_security_tools - INFO - 安装工具: openvas
+2026-01-11 17:05:55,232 - src.tools.advanced_security_tools - ERROR - 安装工具 openvas 时出错: [Errno 2] No such file or directory: 'apt'
+2026-01-11 17:05:55,232 - src.tools.advanced_security_tools - INFO - 安装工具: vulmap
+2026-01-11 17:05:55,291 - src.tools.advanced_security_tools - ERROR - 工具 vulmap 安装失败: fatal: destination path 'vulmap' already exists and is not an empty directory.
+
+2026-01-11 17:05:55,292 - src.tools.advanced_security_tools - INFO - 安装工具: afrog
+2026-01-11 17:06:16,216 - src.tools.advanced_security_tools - ERROR - 工具 afrog 安装失败: go: downloading github.com/zan8in/afrog v1.3.9
+go: downloading github.com/cavaliergopher/grab/v3 v3.0.1
+go: downloading github.com/urfave/cli/v2 v2.3.0
+go: downloading github.com/axgle/mahonia v0.0.0-20180208002826-3358181d7394
+go: downloading github.com/dlclark/regexp2 v1.4.0
+go: downloading github.com/google/cel-go v0.9.0
+go: downloading github.com/gookit/color v1.5.0
+go: downloading github.com/panjf2000/ants/v2 v2.5.0
+go: downloading github.com/natefinch/lumberjack v2.0.0+incompatible
+go: downloading go.uber.org/zap v1.21.0
+go: downloading google.golang.org/genproto v0.0.0-20210831024726-fe130286e0e2
+go: downloading github.com/karrick/godirwalk v1.16.1
+go: downloading github.com/cpuguy83/go-md2man/v2 v2.0.0-20190314233015-f79a8a8ca69d
+go: downloading github.com/valyala/fasthttp v1.39.0
+go: downloading github.com/xo/terminfo v0.0.0-20210125001918-ca9a967f8778
+go: downloading github.com/stoewer/go-strcase v1.2.0
+go: downloading github.com/projectdiscovery/rawhttp v0.1.1
+go: downloading github.com/antlr/antlr4/runtime/Go/antlr v0.0.0-20210826220005-b48c857c3a0e
+go: downloading go.uber.org/atomic v1.7.0
+go: downloading go.uber.org/multierr v1.6.0
+go: downloading github.com/russross/blackfriday/v2 v2.0.1
+go: downloading github.com/shurcooL/sanitized_anchor_name v1.0.0
+go: downloading github.com/klauspost/compress v1.15.9
+go: downloading github.com/andybalholm/brotli v1.0.4
+go: downloading github.com/projectdiscovery/retryablehttp-go v1.0.2
+go: downloading github.com/projectdiscovery/fastdialer v0.0.15
+go: downloading github.com/projectdiscovery/networkpolicy v0.0.1
+go: downloading github.com/projectdiscovery/hmap v0.0.2-0.20210917080408-0fd7bd286bfa
+go: downloading github.com/projectdiscovery/cryptoutil v0.0.0-20210805184155-b5d2512f9345
+go: downloading github.com/projectdiscovery/iputil v0.0.0-20210804143329-3a30fcde43f3
+go: downloading github.com/projectdiscovery/retryabledns v1.0.13-0.20210916165024-76c5b76fd59a
+go: downloading github.com/zmap/zcrypto v0.0.0-20211005224000-2d0ffdec8a9b
+go: downloading go.etcd.io/bbolt v1.3.6
+go: downloading github.com/projectdiscovery/mapcidr v0.0.8
+go: downloading golang.org/x/sys v0.0.0-20220310020820-b874c991c1a5
+go: downloading golang.org/x/crypto v0.0.0-20220214200702-86341886e292
+go: downloading github.com/zmap/rc2 v0.0.0-20131011165748-24b9757f5521
+go: downloading github.com/weppos/publicsuffix-go v0.15.1-0.20210928183822-5ee35905bd95
+go: downloading github.com/projectdiscovery/stringsutil v0.0.0-20210830151154-f567170afdd9
+go: downloading github.com/miekg/dns v1.1.43
+go: downloading github.com/projectdiscovery/blackrock v0.0.0-20210415162320-b38689ae3a2e
+github.com/shurcooL/sanitized_anchor_name
+github.com/google/cel-go/common/overloads
+golang.org/x/sys/internal/unsafeheader
+github.com/google/cel-go/common/operators
+golang.org/x/crypto/internal/subtle
+golang.org/x/net/internal/iana
+github.com/projectdiscovery/blackrock
+github.com/google/cel-go/common/runes
+github.com/panjf2000/ants/v2/internal
+github.com/zan8in/afrog/pkg/errors
+golang.org/x/text/width
+github.com/stoewer/go-strcase
+go.uber.org/zap/buffer
+github.com/projectdiscovery/hmap/store/cache
+github.com/russross/blackfriday/v2
+github.com/karrick/godirwalk
+github.com/axgle/mahonia
+github.com/zan8in/afrog/pkg/proto
+google.golang.org/protobuf/types/known/durationpb
+google.golang.org/protobuf/types/known/anypb
+google.golang.org/protobuf/types/known/emptypb
+google.golang.org/protobuf/internal/encoding/json
+github.com/dlclark/regexp2/syntax
+google.golang.org/protobuf/types/known/timestamppb
+github.com/zan8in/afrog/pkg/catalog
+google.golang.org/genproto/googleapis/rpc/status
+google.golang.org/protobuf/types/dynamicpb
+google.golang.org/protobuf/types/known/wrapperspb
+github.com/antlr/antlr4/runtime/Go/antlr
+google.golang.org/protobuf/encoding/protojson
+github.com/panjf2000/ants/v2
+github.com/klauspost/compress/flate
+github.com/cpuguy83/go-md2man/v2/md2man
+github.com/andybalholm/brotli
+github.com/valyala/fasthttp/fasthttputil
+github.com/valyala/fasthttp/stackless
+github.com/urfave/cli/v2
+golang.org/x/net/http/httpproxy
+golang.org/x/net/internal/socks
+github.com/xo/terminfo
+golang.org/x/net/proxy
+google.golang.org/protobuf/types/known/structpb
+github.com/natefinch/lumberjack
+github.com/dlclark/regexp2
+go.uber.org/atomic
+go.uber.org/zap/internal/bufferpool
+github.com/gookit/color
+go.uber.org/zap/internal/color
+google.golang.org/genproto/googleapis/api/expr/v1alpha1
+go.uber.org/multierr
+go.uber.org/zap/internal/exit
+github.com/projectdiscovery/cryptoutil
+go.uber.org/zap/zapcore
+github.com/klauspost/compress/gzip
+github.com/klauspost/compress/zlib
+golang.org/x/sys/unix
+github.com/projectdiscovery/mapcidr
+golang.org/x/net/bpf
+golang.org/x/net/http/httpguts
+github.com/google/cel-go/checker/decls
+github.com/google/cel-go/common
+github.com/google/cel-go/common/containers
+github.com/google/cel-go/common/debug
+github.com/zan8in/afrog/pkg/utils
+github.com/google/cel-go/common/types/pb
+github.com/google/cel-go/common/types/ref
+github.com/projectdiscovery/iputil
+golang.org/x/net/http2/hpack
+github.com/google/cel-go/common/types/traits
+go.uber.org/zap
+github.com/projectdiscovery/networkpolicy
+github.com/projectdiscovery/stringsutil
+golang.org/x/net/http2
+github.com/zmap/rc2
+github.com/zmap/zcrypto/internal/randutil
+github.com/google/cel-go/common/types
+github.com/zmap/zcrypto/json
+github.com/zmap/zcrypto/dsa
+github.com/weppos/publicsuffix-go/publicsuffix
+github.com/zan8in/afrog/pkg/config
+github.com/zan8in/afrog/pkg/poc
+github.com/zmap/zcrypto/encoding/asn1
+github.com/zmap/zcrypto/util
+github.com/zmap/zcrypto/x509/ct
+golang.org/x/crypto/ed25519
+github.com/zmap/zcrypto/x509/pkix
+golang.org/x/crypto/internal/poly1305
+golang.org/x/crypto/chacha20
+github.com/zan8in/afrog/pkg/log
+github.com/projectdiscovery/rawhttp/client
+go.etcd.io/bbolt
+golang.org/x/net/internal/socket
+github.com/projectdiscovery/rawhttp/clientpipeline
+golang.org/x/crypto/chacha20poly1305
+github.com/projectdiscovery/rawhttp/proxy
+github.com/zan8in/afrog/pocs
+github.com/cavaliergopher/grab/v3/pkg/bps
+github.com/zmap/zcrypto/x509
+github.com/cavaliergopher/grab/v3
+golang.org/x/net/ipv4
+golang.org/x/net/ipv6
+github.com/zan8in/afrog/pkg/upgrade
+github.com/projectdiscovery/hmap/store/disk
+github.com/google/cel-go/interpreter/functions
+github.com/google/cel-go/interpreter
+github.com/projectdiscovery/hmap/store/hybrid
+github.com/miekg/dns
+github.com/zmap/zcrypto/tls
+github.com/google/cel-go/parser/gen
+github.com/projectdiscovery/retryablehttp-go
+github.com/valyala/fasthttp
+github.com/projectdiscovery/retryabledns/doh
+github.com/projectdiscovery/retryabledns
+github.com/google/cel-go/parser
+github.com/projectdiscovery/fastdialer/fastdialer
+github.com/projectdiscovery/rawhttp
+github.com/google/cel-go/checker
+github.com/valyala/fasthttp/fasthttpproxy
+github.com/google/cel-go/cel
+github.com/zan8in/afrog/pkg/protocols/http
+github.com/zan8in/afrog/pkg/protocols/raw
+github.com/zan8in/afrog/pkg/scan
+github.com/zan8in/afrog/pkg/gopoc
+github.com/zan8in/afrog/pkg/core
+github.com/zan8in/afrog/pkg/fingerprint
+github.com/zan8in/afrog/pkg/html
+github.com/zan8in/afrog/internal/runner
+github.com/zan8in/afrog/cmd/afrog
+# github.com/zan8in/afrog/cmd/afrog
+link: golang.org/x/net/internal/socket: invalid reference to syscall.recvmsg
+
+2026-01-11 17:06:16,217 - src.tools.advanced_security_tools - INFO - 安装工具: subfinder
+2026-01-11 17:07:10,629 - src.tools.advanced_security_tools - INFO - 工具 subfinder 安装成功
+2026-01-11 17:07:10,629 - src.tools.advanced_security_tools - INFO - 安装工具: amass
+2026-01-11 17:07:44,810 - src.tools.advanced_security_tools - ERROR - 工具 amass 安装失败: go: downloading github.com/OWASP/Amass v1.5.3-0.20190925044303-702376c79403
+go: downloading github.com/OWASP/Amass/v3 v3.23.3
+go: github.com/OWASP/Amass/v3/...@master: version constraints conflict:
+	github.com/OWASP/Amass/v3@v3.23.3: parsing go.mod:
+	module declares its path as: github.com/owasp-amass/amass/v3
+	        but was required as: github.com/OWASP/Amass/v3
+
+2026-01-11 17:07:44,810 - src.tools.advanced_security_tools - INFO - 安装工具: assetfinder
+2026-01-11 17:07:47,717 - src.tools.advanced_security_tools - INFO - 工具 assetfinder 安装成功
+2026-01-11 17:07:47,717 - src.tools.advanced_security_tools - INFO - 安装工具: sublist3r
+2026-01-11 17:07:50,775 - src.tools.advanced_security_tools - INFO - 工具 sublist3r 安装成功
+2026-01-11 17:07:50,775 - src.tools.advanced_security_tools - INFO - 安装工具: dnsrecon
+2026-01-11 17:07:50,783 - src.tools.advanced_security_tools - ERROR - 安装工具 dnsrecon 时出错: [Errno 2] No such file or directory: 'apt'
+2026-01-11 17:07:50,783 - src.tools.advanced_security_tools - INFO - 安装工具: fierce
+2026-01-11 17:07:53,763 - src.tools.advanced_security_tools - INFO - 工具 fierce 安装成功
+2026-01-11 17:07:53,763 - src.tools.advanced_security_tools - INFO - 安装工具: theharvester
+2026-01-11 17:07:53,771 - src.tools.advanced_security_tools - ERROR - 安装工具 theharvester 时出错: [Errno 2] No such file or directory: 'apt'
+2026-01-11 17:07:53,771 - src.tools.advanced_security_tools - INFO - 安装工具: recon-ng
+2026-01-11 17:07:53,778 - src.tools.advanced_security_tools - ERROR - 安装工具 recon-ng 时出错: [Errno 2] No such file or directory: 'apt'
+2026-01-11 17:07:53,778 - src.tools.advanced_security_tools - INFO - 安装工具: shodan
+2026-01-11 17:07:58,710 - src.tools.advanced_security_tools - INFO - 工具 shodan 安装成功
+2026-01-11 17:07:58,710 - src.tools.advanced_security_tools - INFO - 安装工具: censys
+2026-01-11 17:08:06,378 - src.tools.advanced_security_tools - INFO - 工具 censys 安装成功
+2026-01-11 17:08:06,378 - src.tools.advanced_security_tools - INFO - 安装工具: spiderfoot
+2026-01-11 17:08:07,523 - src.tools.advanced_security_tools - ERROR - 工具 spiderfoot 安装失败: ERROR: Could not find a version that satisfies the requirement spiderfoot (from versions: none)
+ERROR: No matching distribution found for spiderfoot
+WARNING: You are using pip version 21.2.4; however, version 25.3 is available.
+You should consider upgrading via the '/Library/Developer/CommandLineTools/usr/bin/python3 -m pip install --upgrade pip' command.
+
+2026-01-11 17:08:07,523 - src.tools.advanced_security_tools - INFO - 安装工具: osrframework
+2026-01-11 17:08:37,794 - src.tools.advanced_security_tools - INFO - 工具 osrframework 安装成功
+2026-01-11 17:08:37,794 - src.tools.advanced_security_tools - INFO - 安装工具: twint
+2026-01-11 17:08:47,356 - src.tools.advanced_security_tools - INFO - 工具 twint 安装成功
+2026-01-11 17:08:47,357 - src.tools.advanced_security_tools - INFO - 安装工具: metasploit
+2026-01-11 17:08:47,364 - src.tools.advanced_security_tools - ERROR - 安装工具 metasploit 时出错: [Errno 2] No such file or directory: 'apt'
+2026-01-11 17:08:47,365 - src.tools.advanced_security_tools - INFO - 安装工具: searchsploit
+2026-01-11 17:08:47,372 - src.tools.advanced_security_tools - ERROR - 安装工具 searchsploit 时出错: [Errno 2] No such file or directory: 'apt'
+2026-01-11 17:08:47,372 - src.tools.advanced_security_tools - INFO - 安装工具: exploit-db
+2026-01-11 17:08:47,379 - src.tools.advanced_security_tools - ERROR - 安装工具 exploit-db 时出错: [Errno 2] No such file or directory: 'apt'
+2026-01-11 17:08:47,380 - src.tools.advanced_security_tools - INFO - 安装工具: beef
+2026-01-11 17:08:47,387 - src.tools.advanced_security_tools - ERROR - 安装工具 beef 时出错: [Errno 2] No such file or directory: 'apt'
+2026-01-11 17:08:47,387 - src.tools.advanced_security_tools - INFO - 安装工具: armitage
+2026-01-11 17:08:47,394 - src.tools.advanced_security_tools - ERROR - 安装工具 armitage 时出错: [Errno 2] No such file or directory: 'apt'
+2026-01-11 17:08:47,395 - src.tools.advanced_security_tools - INFO - 安装工具: john
+2026-01-11 17:08:47,402 - src.tools.advanced_security_tools - ERROR - 安装工具 john 时出错: [Errno 2] No such file or directory: 'apt'
+2026-01-11 17:08:47,402 - src.tools.advanced_security_tools - INFO - 安装工具: hashcat
+2026-01-11 17:08:47,410 - src.tools.advanced_security_tools - ERROR - 安装工具 hashcat 时出错: [Errno 2] No such file or directory: 'apt'
+2026-01-11 17:08:47,410 - src.tools.advanced_security_tools - INFO - 安装工具: hydra
+2026-01-11 17:08:47,418 - src.tools.advanced_security_tools - ERROR - 安装工具 hydra 时出错: [Errno 2] No such file or directory: 'apt'
+2026-01-11 17:08:47,418 - src.tools.advanced_security_tools - INFO - 安装工具: medusa
+2026-01-11 17:08:47,427 - src.tools.advanced_security_tools - ERROR - 安装工具 medusa 时出错: [Errno 2] No such file or directory: 'apt'
+2026-01-11 17:08:47,427 - src.tools.advanced_security_tools - INFO - 安装工具: aircrack-ng
+2026-01-11 17:08:47,435 - src.tools.advanced_security_tools - ERROR - 安装工具 aircrack-ng 时出错: [Errno 2] No such file or directory: 'apt'
+2026-01-11 17:08:47,435 - src.tools.advanced_security_tools - INFO - 安装工具: binwalk
+2026-01-11 17:08:47,444 - src.tools.advanced_security_tools - ERROR - 安装工具 binwalk 时出错: [Errno 2] No such file or directory: 'apt'
+2026-01-11 17:08:47,444 - src.tools.advanced_security_tools - INFO - 安装工具: radare2
+2026-01-11 17:08:47,452 - src.tools.advanced_security_tools - ERROR - 安装工具 radare2 时出错: [Errno 2] No such file or directory: 'apt'
+2026-01-11 17:08:47,452 - src.tools.advanced_security_tools - INFO - 安装工具: gdb
+2026-01-11 17:08:47,459 - src.tools.advanced_security_tools - ERROR - 安装工具 gdb 时出错: [Errno 2] No such file or directory: 'apt'
+2026-01-11 17:08:47,459 - src.tools.advanced_security_tools - INFO - 安装工具: strace
+2026-01-11 17:08:47,467 - src.tools.advanced_security_tools - ERROR - 安装工具 strace 时出错: [Errno 2] No such file or directory: 'apt'
+2026-01-11 17:08:47,467 - src.tools.advanced_security_tools - INFO - 安装工具: ltrace
+2026-01-11 17:08:47,474 - src.tools.advanced_security_tools - ERROR - 安装工具 ltrace 时出错: [Errno 2] No such file or directory: 'apt'
+2026-01-11 17:08:47,474 - src.tools.advanced_security_tools - INFO - 安装工具: volatility
+2026-01-11 17:08:51,439 - src.tools.advanced_security_tools - INFO - 工具 volatility 安装成功
+2026-01-11 17:08:51,439 - src.tools.advanced_security_tools - INFO - 安装工具: sherlock
+2026-01-11 17:08:57,174 - src.tools.advanced_security_tools - INFO - 工具 sherlock 安装成功
+2026-01-11 17:08:57,174 - src.tools.advanced_security_tools - INFO - 安装工具: maigret
+2026-01-11 17:10:06,199 - src.tools.advanced_security_tools - INFO - 工具 maigret 安装成功
+2026-01-11 17:10:06,200 - src.tools.advanced_security_tools - INFO - 安装工具: holehe
+2026-01-11 17:10:10,696 - src.tools.advanced_security_tools - INFO - 工具 holehe 安装成功
+2026-01-11 17:10:10,696 - src.tools.advanced_security_tools - INFO - 安装工具: ghunt
+2026-01-11 17:10:34,206 - src.tools.advanced_security_tools - INFO - 工具 ghunt 安装成功
+2026-01-11 17:10:34,207 - __main__ - INFO - Tool masscan: Failed
+2026-01-11 17:10:34,207 - __main__ - INFO - Tool zmap: Failed
+2026-01-11 17:10:34,207 - __main__ - INFO - Tool rustscan: Failed
+2026-01-11 17:10:34,207 - __main__ - INFO - Tool unicornscan: Failed
+2026-01-11 17:10:34,207 - __main__ - INFO - Tool hping3: Failed
+2026-01-11 17:10:34,207 - __main__ - INFO - Tool netcat: Failed
+2026-01-11 17:10:34,207 - __main__ - INFO - Tool socat: Failed
+2026-01-11 17:10:34,207 - __main__ - INFO - Tool wireshark: Failed
+2026-01-11 17:10:34,207 - __main__ - INFO - Tool gobuster: Success
+2026-01-11 17:10:34,207 - __main__ - INFO - Tool dirb: Failed
+2026-01-11 17:10:34,207 - __main__ - INFO - Tool dirsearch: Failed
+2026-01-11 17:10:34,207 - __main__ - INFO - Tool ffuf: Success
+2026-01-11 17:10:34,207 - __main__ - INFO - Tool wfuzz: Success
+2026-01-11 17:10:34,207 - __main__ - INFO - Tool nikto: Failed
+2026-01-11 17:10:34,207 - __main__ - INFO - Tool sqlmap: Failed
+2026-01-11 17:10:34,207 - __main__ - INFO - Tool xsser: Failed
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool commix: Failed
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool whatweb: Failed
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool waybackurls: Success
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool gau: Success
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool hakrawler: Success
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool gospider: Success
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool owasp-zap: Failed
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool wpscan: Failed
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool joomscan: Failed
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool droopescan: Success
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool nuclei: Success
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool openvas: Failed
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool vulmap: Failed
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool afrog: Failed
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool subfinder: Success
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool amass: Failed
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool assetfinder: Success
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool sublist3r: Success
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool dnsrecon: Failed
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool fierce: Success
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool theharvester: Failed
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool recon-ng: Failed
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool shodan: Success
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool censys: Success
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool spiderfoot: Failed
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool osrframework: Success
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool twint: Success
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool metasploit: Failed
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool searchsploit: Failed
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool exploit-db: Failed
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool beef: Failed
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool armitage: Failed
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool john: Failed
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool hashcat: Failed
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool hydra: Failed
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool medusa: Failed
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool aircrack-ng: Failed
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool binwalk: Failed
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool radare2: Failed
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool gdb: Failed
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool strace: Failed
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool ltrace: Failed
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool volatility: Success
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool sherlock: Success
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool maigret: Success
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool holehe: Success
+2026-01-11 17:10:34,208 - __main__ - INFO - Tool ghunt: Success
+2026-01-11 17:10:34,647 - src.config.loader - INFO - Loaded configuration from conf.yaml
+2026-01-11 17:10:34,778 - src.config.loader - INFO - Loaded configuration from /Users/mac/Documents/work/CompaniesStartups/奥米智能/dev/OmniNoval/vulun_agent_config.yaml
+2026-01-11 17:10:34,778 - src.tools.security_tools - INFO - Loaded VulunAgent config from /Users/mac/Documents/work/CompaniesStartups/奥米智能/dev/OmniNoval/vulun_agent_config.yaml
+2026-01-11 17:10:37,129 - src.tools.security_tools - INFO - 可用安全工具: ['nmap', 'httpx', 'ropgadget', 'checksec', 'objdump', 'pwntools', 'angr', 'strings', 'xxd', 'file', 'have-i-been-pwned', 'curl', 'tcpdump']
+2026-01-11 17:10:39,525 - src.agents.vulun_agent - INFO - VulunAgent 初始化完成，集成了智能决策引擎和参数优化器
+2026-01-11 17:10:39,731 - __main__ - INFO - Starting OmniNoval API server on 0.0.0.0:8000
+INFO:     Started server process [79314]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+ERROR:    [Errno 48] error while attempting to bind on address ('0.0.0.0', 8000): address already in use
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+
+    ========================================================================
+       ____                 _ _   _                 _ 
+      / __ \               (_) \ | |               | |
+     | |  | |_ __ ___  _ __  _|  \| | _____   ____ _| |
+     | |  | | '_ ` _ \| '_ \| | . ` |/ _ \ \ / / _` | |
+     | |__| | | | | | | | | | | |\  | (_) \ V / (_| | |
+      \____/|_| |_| |_|_| |_|_|_| \_|\___/ \_/ \__,_|_|
+                                                        
+      Advanced AI-Powered Cybersecurity Automation Platform
+    ========================================================================
+    

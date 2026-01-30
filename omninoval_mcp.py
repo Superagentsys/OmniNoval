@@ -187,6 +187,52 @@ def setup_mcp_server(client: OmniNovalClient) -> FastMCP:
     # --- 系统监控与资源管理 ---
 
     @mcp.tool()
+    def intelligent_smart_scan(target: str, objective: str = "comprehensive") -> Dict[str, Any]:
+        """
+        执行智能全自动扫描。系统将根据目标画像自动选择并编排 150+ 工具链。
+        
+        Args:
+            target: 目标 URL, IP 或 域名
+            objective: 扫描深度 (quick, comprehensive, stealth)
+        """
+        logger.info(f"🚀 启动智能全自动扫描: {OmniNovalColors.BOLD}{target}{OmniNovalColors.RESET}")
+        return client.safe_post("api/intelligence/smart-scan", {"target": target, "objective": objective})
+
+    @mcp.tool()
+    def nmap_scan(target: str, stealth: bool = False) -> Dict[str, Any]:
+        """执行优化后的 Nmap 端口与服务指纹扫描。"""
+        return client.safe_post("api/tools/execute", {"tool_name": "nmap", "target": target, "context": {"stealth": stealth}})
+
+    @mcp.tool()
+    def nuclei_scan(target: str, quick: bool = False) -> Dict[str, Any]:
+        """执行 Nuclei 漏洞扫描，自动加载针对目标的模板。"""
+        return client.safe_post("api/tools/execute", {"tool_name": "nuclei", "target": target, "context": {"quick": quick}})
+
+    @mcp.tool()
+    def sqlmap_scan(target: str, aggressive: bool = False) -> Dict[str, Any]:
+        """针对目标 URL 执行 SQL 注入检测。"""
+        return client.safe_post("api/tools/execute", {"tool_name": "sqlmap", "target": target, "context": {"aggressive": aggressive}})
+
+    @mcp.tool()
+    def gobuster_scan(target: str) -> Dict[str, Any]:
+        """执行目录或子域名爆破，自动根据技术栈选择扩展名。"""
+        return client.safe_post("api/tools/execute", {"tool_name": "gobuster", "target": target})
+
+    @mcp.tool()
+    def execute_command(command: str) -> Dict[str, Any]:
+        """
+        执行任意底层安全命令。支持 HexStrike 150+ 工具库中的所有二进制文件。
+        示例: 'amass enum -d example.com'
+        """
+        logger.info(f"⚡ 执行底层命令: {command}")
+        return client.safe_post("api/command", {"command": command})
+
+    @mcp.tool()
+    def get_performance_dashboard() -> Dict[str, Any]:
+        """查看实时性能看板，包括 CPU/内存占用、缓存命中率和活跃任务。"""
+        return client.safe_get("api/process/performance-dashboard")
+
+    @mcp.tool()
     def get_server_health() -> Dict[str, Any]:
         """查看 OmniNoval API 服务器的健康状态、工具可用性清单以及进程统计信息。"""
         logger.info("🏥 正在查询服务器健康状态...")
