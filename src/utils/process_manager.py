@@ -4,6 +4,8 @@ Inspired by hexstrike-ai's EnhancedProcessManager.
 """
 
 import os
+import queue
+import signal
 import subprocess
 import threading
 import time
